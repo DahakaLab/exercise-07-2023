@@ -1,6 +1,6 @@
 type AccountType = "live" | "demo";
 
-export class tradingAccountsDto {
+export class TradingAccountsDto {
   taid: string | number;
   accounty_type: AccountType;
   platform: string;

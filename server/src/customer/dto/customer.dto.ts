@@ -1,4 +1,4 @@
-import { tradingAccountsDto } from "src/trading-accounts/dto/tradingAccounts.dto";
+import { TradingAccountsDto } from "src/trading-accounts/dto/tradingAccounts.dto";
 import { WalletDto } from "../../wallet/dto/wallet.dto";
 import { PaymentsDto } from "src/payments/dto/payments.dto";
 import { NotesDto } from "src/notes/dto/notes.dto";
@@ -20,7 +20,7 @@ export class CustomerDto {
   status: ClientStatus;
   invited_by_affiliate: string;
   wallet: WalletDto;
-  trading_accounts: tradingAccountsDto[];
+  trading_accounts: TradingAccountsDto[];
   payments: PaymentsDto[];
   notes: NotesDto[];
   activity: ActivityDto[];
