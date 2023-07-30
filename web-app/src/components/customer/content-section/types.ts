@@ -1,0 +1,1 @@
+export type SectionType = 'payments' | 'notes' | 'activity';

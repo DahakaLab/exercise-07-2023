@@ -3,6 +3,7 @@
 
 	import { customerStore } from '$store/customerStore';
 	import WalletSection from '$components/customer/wallet-section/WalletSection.svelte';
+	import ContentSection from '$components/customer/content-section/ContentSection.svelte';
 
 	import CustomLayout from './CustomLayout.svelte';
 
@@ -22,7 +23,7 @@
 <CustomLayout isLoading={$isCustomerLoading}>
 		<section slot="main">
 			{#if $customer}
-				<span>{$customer?.phone}</span>
+				<ContentSection customer={$customer} />
 			{/if}
 		</section>
 		<section slot="rightSection">
