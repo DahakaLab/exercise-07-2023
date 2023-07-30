@@ -5,23 +5,26 @@
 	import Tag from '$components/tag/Tag.svelte';
 	import { getAccountStatusFromCustomer } from '$adapters/getAccountStatusFromCustomer';
 	import { getPhoneFormatted } from '$adapters/getPhoneFormatted';
+	import { modalStore } from '$store/modalStore';
 
 	export let customer: Customer;
+
+	const { openDepositModal, openWithdrawModal } = modalStore();
 
 	$: amount = getAmountFromWallet(customer.wallet);
 	$: clientTag = getAccountStatusFromCustomer(customer.status);
 
 	$: clientID = `#${customer.client_id}`;
 	$: clientPhone = getPhoneFormatted(customer.phone);
-  $: clientFullName = `${customer.lastname} ${customer.firstname}`;
+	$: clientFullName = `${customer.lastname} ${customer.firstname}`;
 	$: clientAddress = `${customer.country}, ${customer.city}, ${customer.address1}, ${customer.postcode}`;
 
 	const deposit = () => {
-		console.log('deposit');
+		openDepositModal();
 	};
 
 	const withdraw = () => {
-		console.log('withdraw');
+		openWithdrawModal();
 	};
 </script>
 
@@ -41,7 +44,7 @@
 	</div>
 	<div class="p-4">
 		<p>{clientID}</p>
-    <p>{clientPhone}</p>
+		<p>{clientPhone}</p>
 		<p class="font-bold">{clientFullName}</p>
 		<p>{clientAddress}</p>
 		<p>

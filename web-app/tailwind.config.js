@@ -7,10 +7,12 @@ export default {
     extend: {
       borderColor: colors.grey,
       textColor: {
-        white: '#fff'
+        white: '#fff',
+        red: colors.red,
       },
     },
     colors: {
+      white: "#fff",
       blue: "#009EE2",
       "blue-dark": '#253B7E',
       gray: colors.gray,

@@ -54,4 +54,7 @@ export interface Customer {
   payments: Payments[];
   notes: Note[];
   activity: Activity[];
-} 
+}
+
+export interface WithdrawReq extends Pick<Payments, "gateway" | "amount"> {}
+export interface DepositReq extends Pick<Payments, "gateway" | "amount"> {}

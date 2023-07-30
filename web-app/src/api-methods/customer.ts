@@ -1,4 +1,4 @@
-import type { Customer } from "$types/api/customer";
+import type { Customer, WithdrawReq } from "$types/api/customer";
 
 import { transport } from "../utils/transport";
 
@@ -15,12 +15,12 @@ export const customerMethods = {
     const { data } = await transport.get<Customer>(customerUrls.data());
     return data;
   },
-  deposit: async (message: string) => {
-    const { data } = await transport.post<Customer>(customerUrls.deposit(), { message });
+  deposit: async ({ amount, gateway }: WithdrawReq) => {
+    const { data } = await transport.post<Customer>(customerUrls.deposit(), { amount, gateway });
     return data;
   },
-  withdraw: async (message: string) => {
-    const { data } = await transport.post<Customer>(customerUrls.withdraw(), { message });
+  withdraw: async ({ amount, gateway }: WithdrawReq) => {
+    const { data } = await transport.post<Customer>(customerUrls.withdraw(), { amount, gateway });
     return data;
   },
 };

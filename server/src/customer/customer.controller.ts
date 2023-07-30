@@ -15,12 +15,12 @@ export class CustomerController {
 
   @Post(customerPaths.deposit)
   deposit(@Body() depositReq: PaymentsDto) {
-    console.log("deposit");
+    console.log("deposit", depositReq);
     return this.customerService.deposit(depositReq);
   }
 
   @Post(customerPaths.withdraw)
-  withdraw(@Body() depositReq: PaymentsDto) {
-    return this.customerService.withdraw(depositReq);
+  withdraw(@Body() withdrawReq: PaymentsDto) {
+    return this.customerService.withdraw(withdrawReq);
   }
 }

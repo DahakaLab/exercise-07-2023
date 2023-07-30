@@ -3,6 +3,7 @@
 
 	import '../app.css';
 	import Loader from '$components/loader/Loader.svelte';
+	import Modal from '$components/modal/Modal.svelte';
 
 	export let isLoading: boolean = false;
 </script>
@@ -28,6 +29,7 @@
 					</Svroller>
 				</div>
 			</div>
+			<Modal/>
 		</div>
 	{/if}
 </main>
