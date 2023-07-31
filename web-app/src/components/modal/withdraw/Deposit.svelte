@@ -29,7 +29,7 @@
     <h2 class="text-3xl mb-4">Deposit</h2>
   </div>
   <div class="p-8 pt-0">
-    <form use:form class="flex flex-col" on:submit={submit}>
+    <form use:form class="flex flex-col" on:submit|preventDefault={submit}>
       <Hint for="gateway" on="minLength" let:value class="mb-4 text-red-500">
         The field requires at least {value} characters.
       </Hint>
@@ -41,7 +41,7 @@
       <Hint for="amount" on="required" class="mb-4 text-red-500">
         The field is required.
       </Hint>
-      <Input name="amount" placeholder="Amount" type="number" validator={[required, number]} class="mb-4"/>
+      <Input name="amount" placeholder="Amount" type="number" step="any" validator={[required]} class="mb-4"/>
     
       <Button disabled={!$form.valid}>Submit</Button>
     </form>

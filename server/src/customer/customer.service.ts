@@ -48,8 +48,6 @@ export class CustomerService {
 
   withdraw(depositReq: PaymentAddReq) {
     const { amount } = depositReq;
-    
-    console.log(amount, typeof amount);
 
     this.addPaymentFromReq(depositReq, 'withdrawal');
     this.customer.wallet.balance -= parseFloat(amount.toFixed(2));

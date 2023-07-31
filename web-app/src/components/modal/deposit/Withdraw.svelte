@@ -29,7 +29,7 @@
     <h2 class="text-3xl mb-4">Withdraw</h2>
   </div>
   <div class="p-8 pt-0">
-    <form use:form class="flex flex-col" on:submit={submit}>
+    <form use:form class="flex flex-col" on:submit|preventDefault={submit}>
       <Hint for="gateway" on="minLength" let:value class="mb-4 text-red-500">
         The field requires at least {value} characters.
       </Hint>
