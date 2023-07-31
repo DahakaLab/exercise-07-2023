@@ -9,6 +9,7 @@ export default {
       textColor: {
         white: '#fff',
         red: colors.red,
+        grey: colors.gray,
       },
     },
     colors: {

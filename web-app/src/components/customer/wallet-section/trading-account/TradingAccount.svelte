@@ -10,7 +10,7 @@
   $: accountTagType = (): TagType => tradingAccount.accounty_type === 'demo' ? 'warning' : 'info';
 </script>
 
-<div class="{$$restProps.class || ''} border-solid border-2 rounded shadow-md w-full p-4">
+<div class="{$$restProps.class || ''} border-solid border-2 shadow-md w-full p-4">
   <p>Token tracker: <span class="font-bold">{tradingAccount.taid}</span></p>
   <p>Platform: ${tradingAccount.platform}</p>
   <div class="flex justify-between items-end">

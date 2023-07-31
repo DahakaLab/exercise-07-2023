@@ -5,6 +5,8 @@
 
   import type { SectionType } from './types';
 	import Payments from "./payments/Payments.svelte";
+	import Note from './note/Note.svelte';
+	import Activity from './activity/Activity.svelte';
 
 	export let customer: Customer;
 
@@ -30,10 +32,18 @@
   {/if}
   {#if sectionSelected === 'notes'}
     <h2 class="text-3xl mb-4">Notes</h2>
-    Content
+    <div class="w-full">
+      {#each customer.notes as note}
+        <Note {note} class="mb-4 last:mb-0" />
+      {/each}
+    </div>
   {/if}
   {#if sectionSelected === 'activity'}
     <h2 class="text-3xl mb-4">Activity</h2>
-    Content
+    <div class="w-full">
+      {#each customer.activity as item}
+        <Activity activity={item} class="mb-4 last:mb-0" />
+      {/each}
+    </div>
   {/if}
 </div>
