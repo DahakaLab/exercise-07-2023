@@ -6,12 +6,18 @@
 	import { getAccountStatusFromCustomer } from '$adapters/getAccountStatusFromCustomer';
 	import { getPhoneFormatted } from '$adapters/getPhoneFormatted';
 	import { modalStore } from '$store/modalStore';
-	import Dropdown from "$components/dropdown/Dropdown.svelte";
+	import Dropdown from '$components/dropdown/Dropdown.svelte';
 	import type { DropdownButtons } from '$components/dropdown/types';
 
 	export let customer: Customer;
 
-	const { openDepositModal, openWithdrawModal } = modalStore();
+	const {
+		openDepositModal,
+		openWithdrawModal,
+		openEditPhoneModal,
+		openEditNameModal,
+		openEditAddressModal
+	} = modalStore();
 
 	$: amount = getAmountFromWallet(customer.wallet);
 	$: clientTag = getAccountStatusFromCustomer(customer.status);
@@ -23,24 +29,18 @@
 
 	const editBtns: DropdownButtons[] = [
 		{
-			text: "Edit phone",
-			handler: () => {
-				console.log("phone")
-			},
+			text: 'Edit phone',
+			handler: () => openEditPhoneModal()
 		},
 		{
-			text: "Edit name",
-			handler: () => {
-				console.log("name")
-			},
+			text: 'Edit name',
+			handler: () => openEditNameModal()
 		},
 		{
-			text: "Edit address",
-			handler: () => {
-				console.log("address")
-			},
-		},
-	]
+			text: 'Edit address',
+			handler: () => openEditAddressModal()
+		}
+	];
 
 	const deposit = () => {
 		openDepositModal();
@@ -68,7 +68,7 @@
 	<div class="p-4">
 		<div class="w-full flex justify-between">
 			<p>{clientID}</p>
-			
+
 			<Dropdown btnText="Settings" drpBtns={editBtns} />
 		</div>
 		<p>{clientPhone}</p>

@@ -6,8 +6,11 @@
 	import { modalStore } from '$store/modalStore';
 	import CrossSVG from '$lib/svg/cross.svg';
 
-	import Withdraw from './withdraw/Deposit.svelte';
-	import Deposit from './withdraw/Deposit.svelte';
+	import Withdraw from './withdraw/Withdraw.svelte';
+	import Deposit from './deposit/Deposit.svelte';
+	import EditPhone from './settings/EditPhone.svelte';
+	import EditName from './settings/EditName.svelte';
+	import EditAddress from './settings/EditAddress.svelte';
 
 	const { typeModal, closeModal } = modalStore();
 	const handleCloseModal = () => closeModal();
@@ -15,6 +18,9 @@
 	const components: Record<ModalType, ComponentType> = {
 		deposit: Deposit,
 		withdraw: Withdraw,
+		editPhone: EditPhone,
+		editName: EditName,
+		editAddress: EditAddress,
 	}
 
 	$: component = $typeModal && components[$typeModal];

@@ -1,1 +1,1 @@
-export type ModalType = "withdraw" | "deposit";
+export type ModalType = "withdraw" | "deposit" | "editPhone" | "editName" | "editAddress";
