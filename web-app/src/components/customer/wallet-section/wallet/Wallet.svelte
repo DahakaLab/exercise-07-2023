@@ -28,7 +28,7 @@
 	};
 </script>
 
-<div class="border-solid border-2 rounded shadow-md">
+<div class="{$$restProps.class || ''} border-solid border-2 rounded shadow-md w-full">
 	<div class="border-b-2 p-4 flex">
 		<div class="pr-2 flex-[1_1_50%]">
 			<h2 class="text-lg">Wallet</h2>
@@ -48,7 +48,7 @@
 		<p class="font-bold">{clientFullName}</p>
 		<p>{clientAddress}</p>
 		<p>
-			Client invited by affiliate <span class="font-bold">{customer.invited_by_affiliate}</span>
+			Client invited by affiliate: <span class="font-bold">{customer.invited_by_affiliate}</span>
 		</p>
 	</div>
 </div>

@@ -7,7 +7,7 @@ export interface Wallet {
 
 export type AccountType = "live" | "demo";
 
-export interface TradingAccountsDto {
+export interface TradingAccount {
   taid: string | number;
   accounty_type: AccountType;
   platform: string;
@@ -50,7 +50,7 @@ export interface Customer {
   status: ClientStatus;
   invited_by_affiliate: string;
   wallet: Wallet;
-  trading_accounts: TradingAccountsDto[];
+  trading_accounts: TradingAccount[];
   payments: Payments[];
   notes: Note[];
   activity: Activity[];
